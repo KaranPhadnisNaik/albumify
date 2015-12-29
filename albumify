@@ -1,0 +1,68 @@
+#! /usr/bin/bash
+#
+# Converts the 
+#
+#
+#
+#
+
+
+
+verbose='false'
+hflag=''
+Aflag=''
+
+while getopts 'A:h' flag; do
+    case "${flag}" in
+	h)
+	    hflag='true'
+	    echo "Overview: Enter a media source and artist name and get corresponding mp3 media file(s)"
+	    echo " "
+	    echo "Usage:"
+	    echo "$ albumify [FLAGS] 'Media Source Name' 'Artist Name' "
+	    echo " "
+	    echo "FLAGS:"
+	    echo "-h                     displays this segment for brief help"
+	    echo "-A                     will get Album with title 'Media Source Name' by 'Artist Name'"
+	    exit 0
+	    ;;
+	A) Aflag='true'
+	   ;;
+	v) verbose='true'
+	   ;;
+	\?)
+	    exit 0
+	    ;;
+    esac
+done
+
+
+album=''
+song=''
+artist=''
+
+#
+# need to check for the number of arguments
+# need to check for if the media / artist could be found
+#
+
+#if you indcate an album 
+if [ "$Aflag" == "true" ]
+then
+
+    album="$2"
+    artist="$3"
+    sleep 2
+    echo "Getting tracks from $album by $artist..."
+
+else
+    song="$1"
+    artist="$2"
+    ./search.py $song $artist
+fi
+
+
+
+
+
+
