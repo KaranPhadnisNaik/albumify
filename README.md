@@ -1,5 +1,4 @@
-#List of (mini)Hacks from your terminal:
-* Albumify
+#Albumify
   * Purpose: extract mp3 files from yotube through user input and organize them into an album OR simply extract a single song
   * Dependencies: __youtube-dl__, MORE TO COME
 
