@@ -3,7 +3,7 @@
   * Dependencies: __youtube-dl__, MORE TO COME
 
 #Setup/Usage
-* Clone repo and cd into directory
+* Clone repo and cd into **Albumify** directory
 * To get single song:
 ```
 	$ cd Albumify
@@ -14,7 +14,18 @@
 	$ cd Albumify
 	$ ./albumify -A "To Pimp a Butterfly" "Kendrick Lamar" tracks.txt
 ```
-	
+* help page
+```
+Overview: Enter a media source and artist name and get corresponding mp3 media file(s)
+
+Usage:
+$ albumify [FLAGS] 'Media Source Name' 'Artist Name'
+
+FLAGS:
+-h                     displays this segment for brief help
+-A                     will get Album with title 'Media Source Name' by 'Artist Name'
+
+```
 
 #Track Log / File description:
 * search.py:
