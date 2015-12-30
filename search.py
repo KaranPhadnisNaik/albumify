@@ -26,7 +26,11 @@ def main():
     song = sys.argv[1]
     artist = sys.argv[2]
 
+    print song
+    print artist
+    
     query = song+" "+artist+" song youtube"
+    print query #delete
     video_URLS =[]
     video_ID = []
     query = urllib.urlencode( {'q' : query } )
@@ -38,7 +42,8 @@ def main():
         url = result['url']
         video_URLS.append(url)
 
-    
+
+    print video_URLS
     #now convert the URLS to yt video IDs
     for video in video_URLS:
         video = video[-11:]

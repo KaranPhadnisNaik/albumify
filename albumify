@@ -1,10 +1,15 @@
 #! /usr/bin/bash
 #
-# Converts the 
+# retrieve mp3 file(s) with specified title and artist name
+# Possible to package into album forman with given specifications
 #
 #
 #
-#
+
+
+
+
+
 
 
 
@@ -15,7 +20,12 @@ Aflag=''
 while getopts 'A:h' flag; do
     case "${flag}" in
 	h)
-	    hflag='true'
+	    if [ "$#" != "1" ]
+	    then
+		echo " albumify -h takes no non-option commands"
+		exit 0
+	    fi
+	       hflag='true'
 	    echo "Overview: Enter a media source and artist name and get corresponding mp3 media file(s)"
 	    echo " "
 	    echo "Usage:"
@@ -30,11 +40,15 @@ while getopts 'A:h' flag; do
 	   ;;
 	v) verbose='true'
 	   ;;
-	\?)
+	\?) echo "Please enter albumify -h for help on commands"
 	    exit 0
 	    ;;
     esac
 done
+
+
+
+
 
 
 album=''
@@ -52,13 +66,31 @@ then
 
     album="$2"
     artist="$3"
-    sleep 2
+    FILE=$4
+
+    
+    sleep 1
     echo "Getting tracks from $album by $artist..."
 
+    mkdir "$album"
+    
+    while read line
+    do
+	song="$line"
+	./search.py "$song" "$artist"
+	mv *.mp3 "$song.mp3"
+	mv "$song.mp3" "$album/"
+	((k++))
+    done < $FILE
+    
+
+    
 else
     song="$1"
     artist="$2"
-    ./search.py $song $artist
+    ./search.py "$song" "$artist"
+    mv *.mp3 "$song.mp3"
+
 fi
 
 
