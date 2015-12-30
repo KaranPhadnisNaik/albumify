@@ -4,18 +4,17 @@
   * Dependencies: __youtube-dl__, MORE TO COME
 
 #Setup/Usage
-	1. Clone repo and cd into directory
-	2. To get single song:
-
-	```
+1. Clone repo and cd into directory
+2. To get single song:
+```
 	$ cd Albumify
 	$ ./albumify "Often" "Weeknd"
-	```
-	3. Getting a complete album:
-	```
+```
+3. Getting a complete album:
+```
 	$ cd Albumify
 	$ ./albumify -A "To Pimp a Butterfly" "Kendrick Lamar" tracks.txt
-	```
+```
 	
 
 #Track Log / File description:
