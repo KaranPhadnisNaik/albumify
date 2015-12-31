@@ -1,6 +1,6 @@
 #! /usr/bin/bash
 #
-# retrieve mp3 file(s) with specified title and artist name
+# retrieve sound file(s) with specified title and artist name
 # Possible to package into album forman with given specifications
 #
 #
@@ -17,6 +17,7 @@ verbose='false'
 hflag=''
 Aflag=''
 
+
 while getopts 'A:h' flag; do
     case "${flag}" in
 	h)
@@ -26,7 +27,7 @@ while getopts 'A:h' flag; do
 		exit 0
 	    fi
 	       hflag='true'
-	    echo "Overview: Enter a media source and artist name and get corresponding mp3 media file(s)"
+	    echo "Overview: Enter a media source and artist name and get corresponding sound media file(s)"
 	    echo " "
 	    echo "Usage:"
 	    echo "$ albumify [FLAGS] 'Media Source Name' 'Artist Name' "
@@ -78,8 +79,8 @@ then
     do
 	song="$line"
 	./search.py "$song" "$artist"
-	mv *.mp3 "$song.mp3"
-	mv "$song.mp3" "$album/"
+	mv *.m4a "$song.m4a"
+	mv "$song.m4a" "$album/"
 	((k++))
     done < $FILE
     
@@ -89,7 +90,7 @@ else
     song="$1"
     artist="$2"
     ./search.py "$song" "$artist"
-    mv *.mp3 "$song.mp3"
+    mv *.m4a "$song.m4a"
 
 fi
 

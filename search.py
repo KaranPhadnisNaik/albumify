@@ -54,8 +54,8 @@ def main():
     print song_URL
 
     getmp3_cmd = "youtube-dl --extract-audio --audio-format mp3 "+song_URL
-    
-    os.system(getmp3_cmd)
+    getm4a_cmd = "youtube-dl --extract-audio "+song_URL
+    os.system(getm4a_cmd)
 
 
 if __name__ == "__main__":
