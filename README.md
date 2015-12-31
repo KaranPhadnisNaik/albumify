@@ -1,6 +1,6 @@
 #Albumify
-  * Purpose: extract mp3 files from yotube through user input and organize them into an album OR simply extract a single song
-  * Dependencies: __youtube-dl__, MORE TO COME
+  * Purpose: extract m4a files from yotube through user input and organize them into an album OR simply extract a single song
+  * Dependencies: __youtube-dl__, __MORE TO COME__
 
 #Setup/Usage
 * Clone repo and cd into **Albumify** directory
@@ -16,7 +16,7 @@
 ```
 * help page
 ```
-Overview: Enter a media source and artist name and get corresponding mp3 media file(s)
+Overview: Enter a media source and artist name and get corresponding m4a media file(s)
 
 Usage:
 $ albumify [FLAGS] 'Media Source Name' 'Artist Name'
@@ -32,7 +32,7 @@ FLAGS:
   * takes in song name and artist name as a querry 
   * gets the FIRST youtube URL via google search
   * the yt hash ID is found then processed and concatenated to the main youtube video url
-  * calls youtube dl to specifiy the download of an mp3 file from the extracted url
+  * calls youtube dl to specifiy the download of a m4a file from the extracted url
 * albumify:
   * == main program
   * has 2 options:
@@ -46,6 +46,6 @@ FLAGS:
     * ONLY temporary (this file will be removed when integration with musicbrainz api is complete)
       
 # Todo
-* write python script that will fully process and input the meta data into the mp3 files
+* write python script that will fully process and input the meta data into the m4a files
 * further test potential arguments
 	    
